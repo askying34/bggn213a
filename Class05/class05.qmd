@@ -1,0 +1,152 @@
+---
+title: "class05: Data viz with ggplot"
+author: "Angie (PID: A69028746)"
+date: 01/24/2024
+format: pdf
+---
+
+## Graphics systems in R
+
+There are many graphics systems for R. These include so-called *"Base R"* and those in add-on packaegs like `ggplot2`.
+
+```{r}
+plot(cars)
+```
+
+How can we make this with `ggplot2`
+
+This is an add-on package and I first need to install it on my computer. This install is a one time only deal.
+
+To install any package I use the `install. packages()` function.
+
+To use it we need to load up the package from our library of install packages. For this I use 'library(ggplot2)
+
+```{r}
+library(ggplot2)
+ggplot(cars)
+```
+Using ggplot is not as straight forward as base R plot for basic plots. I have some more typing to do.
+
+Every ggplot has at least 3 things (layers):
+
+- **data** (data.frame)
+- **aes** (how the data map to the plot)
+- **geoms** (think of this as the type of plot, e.g. point, lines, etc.)
+
+```{r}
+ggplot(cars) + aes(x=speed, y=dist) + geom_point()
+```
+Here ggplot was more verbose - i.e. I had more typing to do - than base R. However, I can 
+
+```{r}
+ggplot(cars) + aes(speed, dist) + geom_point() + geom_smooth() + labs(title = "Stopping Distance of Old Cars") + theme_bw()
+
+```
+
+```{r}
+p <- ggplot(cars) + aes(x=speed, y=dist) + geom_point()
+```
+```{r}
+library(patchwork)
+
+```
+```{r}
+url <- "https://bioboot.github.io/bimm143_S20/class-material/up_down_expression.txt"
+genes <- read.delim(url)
+head(genes)
+```
+
+Q. Use the nrow() function to find out how many genes are in this dataset. What is your answer?
+
+
+```{r}
+nrow(genes)
+```
+
+Q. Use the colnames() function and the ncol() function on the genes data frame to find out what the column names are (we will need these later) and how many columns there are. How many columns did you find?
+```{r}
+ncol(genes)
+colnames(genes)
+```
+
+
+Q. Use the table() function on the State column of this data.frame to find out how many ‘up’ regulated genes there are. What is your answer? 
+
+```{r}
+table(genes$State)
+```
+Q. Using your values above and 2 significant figures. What fraction of total genes is up-regulated in this dataset?
+```{r}
+table(genes$State)/nrow(genes) * 100
+round( table(genes$State)/nrow(genes) * 100, 2 )
+```
+
+
+```{r}
+p <- ggplot(genes) + 
+    aes(x=Condition1, y=Condition2, col=State) +
+    geom_point()
+p
+```
+```{r}
+p <- ggplot(genes) + 
+    aes(x=Condition1, y=Condition2, col=State) +
+    geom_point()
+p + scale_colour_manual( values=c("blue","gray","red") ) + labs(title="do it yourself", x="Control", y="Drug")
+```
+```{r}
+p2 <- ggplot(genes) + 
+    aes(x=Condition1, y=Condition2, col=State, name=Gene) +
+    geom_point()
+p2 + scale_colour_manual( values=c("blue","gray","red") ) + labs(title="do it yourself", x="Control", y="Drug")
+```
+#this is an interactive file
+```{r}
+#| message: false
+
+library(plotly)
+
+#ggplotly(p2)
+```
+```{r}
+
+#ggplotly(p2)
+```
+
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+This is just text.
+
+-   a **list**
+-   *of some*
+-   things
+
+```{r}
+sqrt(10)
+```
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+# This is code chunk
+5+10
+```
+
+```{r}
+plot(1:10)
+
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
