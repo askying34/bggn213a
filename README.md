@@ -7,5 +7,5 @@ as
 My classwork for W24 at UC San Diego 
 made edits
 ## Content
-- class 5: [Data exploration and visualization in R]()
+- class 5: [Data exploration and visualization in R](https://github.com/askying34/bggn213a/blob/main/Class05/class05.md)
 - class 8: [Halloween Candy Mini-Project](https://www.ncbi.nlm.nih.gov/)
