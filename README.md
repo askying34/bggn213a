@@ -1,5 +1,5 @@
 # bggn213a
-My class work for [BIMM143 Winter 2019 (https://bioboot.github.io/bimm143_W19/) at UCSD
+My class work for [BIMM143 Winter 2019] (https://bioboot.github.io/bimm143_W19/) at UCSD
 <<<<<<< HEAD
 My classwork for W24 at UC San Diego
 as
