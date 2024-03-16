@@ -12,6 +12,6 @@ My classwork for W24 at UC San Diego
 - class 6: [R functions and R packages from CRAN and BioConductor]
 - class 7: [Introduction to machine learning for Bioinformatics]
 - class 8: [Breast Cancer_mini_project](https://github.com/askying34/bggn213a/blob/main/Class08_mini_project/class08_mini_project.md)
-- class 9: [Halloween Candy Mini-Project]
+- class 9: [Halloween Candy Mini-Project](https://github.com/askying34/bggn213a/blob/main/Class09_Halloween_mini_project/Class09_Halloween%20_mini_project.md)
 - class 10:
 - class 11:
